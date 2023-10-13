@@ -137,7 +137,8 @@ function runTests() {
     const chooseIncorrectly = () => {
       const questionObj = qArr
         .find(qObj => getQuizHTML().includes(qObj.question))
-      0
+      Array.from(document.querySelectorAll('#quiz button'))
+        .find(btn => btn.textContent !== questionObj.answer)
         .click()
     }
     const getQuizHTML = () => document.getElementById('quiz').innerHTML
